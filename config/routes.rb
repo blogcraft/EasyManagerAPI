@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :system_logs
+  resources :jobs
   resources :users
   resources :clients
   resources :people
