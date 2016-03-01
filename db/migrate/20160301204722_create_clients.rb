@@ -3,9 +3,9 @@ class CreateClients < ActiveRecord::Migration[5.0]
     create_table :clients do |t|
       t.string :notes
       t.integer :rating
+      t.references :person, index: true, foreign_key: true
 
       t.timestamps
     end
-    add_index :clients, :person_id
   end
 end
