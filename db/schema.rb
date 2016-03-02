@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20160301224437) do
   create_table "clients", force: :cascade do |t|
     t.string   "notes"
     t.integer  "rating"
-    t.integer  "people_id"
+    t.integer  "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "clients", ["people_id"], name: "index_clients_on_people_id"
+  add_index "clients", ["person_id"], name: "index_clients_on_person_id"
 
   create_table "jobs", force: :cascade do |t|
     t.date     "date"
