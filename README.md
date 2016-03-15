@@ -1,4 +1,4 @@
-# Instrucciones de EASY MANAGER
+# Instrucciones de EASY MANAGER API
 
 Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager así como también explicar como fue generado el código base y la forma correcta de implementar en un PC desde 0, disfruten.
 
