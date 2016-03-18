@@ -4,34 +4,26 @@ Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager API 
 
 ## Indice
 
-1. [Requerimientos](##Requerimientos)
-2. Generacion de Ambiente
-3. Obtener e Implementar el Código
-4. Lineas de Comando para Generar Codigo Base
-5. Editores Recomendados
-6. Referencias
+1. [Requerimientos](#markdown-header-requerimientos)
+2. [Generacion de Ambiente](#markdown-header-generacion-de-ambiente)
+3. [Obtener e Implementar el Código](#markdown-header-obtener-e-implementar-el-codigo)
+4. [Lineas de Comando para Generar Codigo Base](#markdown-header-lineas-de-comando-para-generar-codigo-base)
+5. [Editores Recomendados](#markdown-header-editores-recomendados)
+6. [Referencias](#markdown-header-referencias)
 
 ## Requerimientos
 
 * Ruby version 2.3.0
-
 * Rails version 5.0.0.beta3
-
 * System dependencies
-[devise](https://github.com/plataformatec/devise)
-[devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
-[omniauth](https://github.com/intridea/omniauth)
-
+    * [devise](https://github.com/plataformatec/devise)
+    * [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
+    * [omniauth](https://github.com/intridea/omniauth)
 * Configuration TODO
-
 * Database creation TODO
-
 * Database initialization TODO
-
 * How to run the test suite TODO
-
 * Services (job queues, cache servers, search engines, etc.) TODO
-
 * Deployment instructions TODO
 
 ## Generacion de Ambiente
