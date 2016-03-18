@@ -1,6 +1,6 @@
 # Instrucciones de EASY MANAGER API
 
-Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager así como también explicar como fue generado el código base y la forma correcta de implementar en un PC desde 0, disfruten.
+Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager API así como también explicar como fue generado el código base y la forma correcta de implementar en un PC desde 0, disfruten.
 
 ## Indice
 
@@ -17,7 +17,10 @@ Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager así
 
 * Rails version 5.0.0.beta3
 
-* System dependencies TODO
+* System dependencies
+[devise](https://github.com/plataformatec/devise)
+[devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
+[omniauth](https://github.com/intridea/omniauth)
 
 * Configuration TODO
 
@@ -84,6 +87,11 @@ rvm 2.3.0@rails5
 10. Instalar Rails (en este caso se especifica la version 5.0.0.beta3)
 ```
 gem install rails --pre
+```
+
+11. Instalar servidor de Mail (opcional)
+```
+sudo apt-get install sendmail
 ```
 
 ## Obtener e Implementar el Código
