@@ -11,7 +11,7 @@ gem 'puma'
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 gem 'devise_token_auth', git: 'git://github.com/lynndylanhurley/devise_token_auth.git'
 gem 'omniauth'
-
+gem "active_model_serializers", github: "rails-api/active_model_serializers", tag: "v0.10.0.rc4"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production

@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316205632) do
+ActiveRecord::Schema.define(version: 20160324150256) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "notes"
     t.integer  "rating"
-    t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "first_name", default: "", null: false
+    t.string   "last_name",  default: "", null: false
+    t.string   "email",      default: "", null: false
+    t.string   "phone",      default: "", null: false
   end
 
-  add_index "clients", ["person_id"], name: "index_clients_on_person_id"
+  add_index "clients", ["user_id"], name: "index_clients_on_user_id"
 
   create_table "jobs", force: :cascade do |t|
     t.date     "date"
@@ -36,15 +40,6 @@ ActiveRecord::Schema.define(version: 20160316205632) do
 
   add_index "jobs", ["client_id"], name: "index_jobs_on_client_id"
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
-
-  create_table "people", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "system_logs", force: :cascade do |t|
     t.string   "type"

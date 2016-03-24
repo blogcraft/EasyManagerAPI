@@ -17,6 +17,16 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 7fc89ec393f85f518f93695163744ae7dca1be9d
+  tag: v0.10.0.rc4
+  specs:
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -151,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   byebug
   devise!
   devise_token_auth!
