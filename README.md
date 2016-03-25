@@ -31,90 +31,75 @@ Este instructivo está enfocado a aclarar aspectos tecnicos de Easy Manager API 
 Cuando se requiere crear un ambiente de desarrollo desde cero y tambien buenas practicas. (Todas las instrucciones requieren de la consola `CTRL + ALT + T`)
 
 1. Instalar RVM con Ruby
-```
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-\curl -sSL https://get.rvm.io | bash -s stable
-```
-
+  ```
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  \curl -sSL https://get.rvm.io | bash -s stable
+  ```
 2. Cada vez que se abra un Shell se debera de ejecutar esta linea para permitir a RVM funcionar
-```
-source $HOME/.rvm/scripts/rvm
-```
-
-3. Actualizar el Gem Manager
-```
-gem update --system
-```
-
-4. Instalar Ruby (en este ejemplo se usa la versión 2.3.0)
-```
-rvm install 2.3.0
-```
-
+  ```
+  source $HOME/.rvm/scripts/rvm
+  ```
+3. Instalar Ruby (en este ejemplo se usa la versión 2.3.0)
+  ```
+  rvm install 2.3.0
+  ```
+4. Actualizar el Gem Manager
+  ```
+  gem update --system
+  ```
 5. Listar las versiones de Ruby instaladas
-```
-rvm list
-```
-
+  ```
+  rvm list
+  ```
 6. Establecer version de Ruby (en este ejemplo se usa la version 2.3.0)
-```
-rvm 2.3.0
-```
-
+  ```
+  rvm 2.3.0
+  ```
 7. Crear el Gemset y ponerle un nombre (en este caso usaremos el gemset para rails v 5.0.0.beta3)
-```
-rvm gemset create rails5
-```
-
+  ```
+  rvm gemset create rails5
+  ```
 8. Listar los Gemsets
-```
-rvm gemset list
-```
-
+  ```
+  rvm gemset list
+  ```
 9. Para cambiar al Gemset se selecciona la version de Ruby seguido del Gemset (El gemset deve coincidir a la version de rubi con la que fue creada)
-```
-rvm 2.3.0@rails5
-```
-
+  ```
+  rvm 2.3.0@rails5
+  ```
 10. Instalar Rails (en este caso se especifica la version 5.0.0.beta3)
-```
-gem install rails --pre
-```
-
+  ```
+  gem install rails --pre
+  ```
 11. Instalar servidor de Mail (opcional)
-```
-sudo apt-get install sendmail
-```
+  ```
+  sudo apt-get install sendmail
+  ```
 
 ## Obtener e Implementar el Código
 
 
 1. Crear Carpeta donde Manegaran proyectos y posicionarse en ella.
-```
-mkdir proyectos
-cd proyectos/
-```
-
+  ```
+  mkdir proyectos
+  cd proyectos/
+  ```
 2. Clonar el repositorio e iniciar sesion.
-```
-git clone https://blogcraft@bitbucket.org/easymanager/easy_manager.git
-```
-
+  ```
+  git clone https://blogcraft@bitbucket.org/easymanager/easy_manager.git
+  ```
 3. Posicionarse en el proyecto easy_manager.
-```
-cd easy_manager/
-```
-
+  ```
+  cd easy_manager/
+  ```
 4. Instalar las dependencias (gems) que se encuentren en el Gemfile.
-```
-bundle install
-```
-
+  ```
+  bundle install
+  ```
 5. Generar las migraciones
-```
-rails db:migrate
-```
-
+  ```
+  rails db:migrate
+  ```
 6. Listo!
 
 ## Lineas de Comando para Generar Codigo Base
