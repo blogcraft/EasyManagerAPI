@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :invoices
+  resources :services
+  resources :appointments
   mount_devise_token_auth_for 'User', at: 'users'
   resources :system_logs
   resources :jobs

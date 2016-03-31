@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :clients, dependent: :destroy
-
+  has_many :services, dependent: :destroy
+  
 end

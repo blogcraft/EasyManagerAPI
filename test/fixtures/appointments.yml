@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-03-31 17:58:33
+  confirm: false
+  assist: false
+  client: one
+
+two:
+  date: 2016-03-31 17:58:33
+  confirm: false
+  assist: false
+  client: two
