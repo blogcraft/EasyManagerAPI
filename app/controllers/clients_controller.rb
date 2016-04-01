@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 
   # GET /clients
   def index
-    @clients = Client.all
+    @clients = Client.for_user(current_user)
 
     render json: @clients
   end
@@ -17,6 +17,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
 
+    @client.user_id = current_user.id
     if @client.save
       render json: @client, status: :created, location: @client
     else
@@ -41,7 +42,7 @@ class ClientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
-      @client = Client.find(params[:id])
+      @client = Client.for_user(current_user).find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
