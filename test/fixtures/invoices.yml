@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-03-31 18:25:42
+  subtotal: 9.99
+  taxable: 9.99
+  taxrate: 9.99
+  taxdue: 9.99
+  other: 9.99
+  total: 9.99
+  appointment: one
+  service: one
+
+two:
+  date: 2016-03-31 18:25:42
+  subtotal: 9.99
+  taxable: 9.99
+  taxrate: 9.99
+  taxdue: 9.99
+  other: 9.99
+  total: 9.99
+  appointment: two
+  service: two

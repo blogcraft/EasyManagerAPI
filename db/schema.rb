@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324150256) do
+ActiveRecord::Schema.define(version: 20160331215245) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "date"
+    t.boolean  "confirm"
+    t.boolean  "assist"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "appointments", ["client_id"], name: "index_appointments_on_client_id"
 
   create_table "clients", force: :cascade do |t|
     t.string   "notes"
@@ -27,6 +38,25 @@ ActiveRecord::Schema.define(version: 20160324150256) do
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
 
+  create_table "invoices", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal  "subtotal"
+    t.decimal  "taxable"
+    t.decimal  "taxrate"
+    t.decimal  "taxdue"
+    t.decimal  "other"
+    t.decimal  "total"
+    t.integer  "appointment_id"
+    t.integer  "service_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.boolean  "paid"
+    t.datetime "paiddate"
+  end
+
+  add_index "invoices", ["appointment_id"], name: "index_invoices_on_appointment_id"
+  add_index "invoices", ["service_id"], name: "index_invoices_on_service_id"
+
   create_table "jobs", force: :cascade do |t|
     t.date     "date"
     t.string   "note"
@@ -40,6 +70,17 @@ ActiveRecord::Schema.define(version: 20160324150256) do
 
   add_index "jobs", ["client_id"], name: "index_jobs_on_client_id"
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
+
+  create_table "services", force: :cascade do |t|
+    t.text     "description"
+    t.decimal  "amount"
+    t.boolean  "taxable"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "services", ["user_id"], name: "index_services_on_user_id"
 
   create_table "system_logs", force: :cascade do |t|
     t.string   "type"
