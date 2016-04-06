@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331215245) do
+ActiveRecord::Schema.define(version: 20160404204309) do
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "date"
     t.boolean  "confirm"
     t.boolean  "assist"
     t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "date"
+    t.time     "time"
+    t.string   "note"
+    t.string   "address"
   end
 
   add_index "appointments", ["client_id"], name: "index_appointments_on_client_id"
@@ -56,20 +59,6 @@ ActiveRecord::Schema.define(version: 20160331215245) do
 
   add_index "invoices", ["appointment_id"], name: "index_invoices_on_appointment_id"
   add_index "invoices", ["service_id"], name: "index_invoices_on_service_id"
-
-  create_table "jobs", force: :cascade do |t|
-    t.date     "date"
-    t.string   "note"
-    t.integer  "amount"
-    t.boolean  "paid"
-    t.integer  "user_id"
-    t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "jobs", ["client_id"], name: "index_jobs_on_client_id"
-  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
   create_table "services", force: :cascade do |t|
     t.text     "description"

@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   def index
-    @appointments = Appointment.all
+    @appointments = current_user.appointments.includes(:client).all
 
     render json: @appointments
   end
@@ -41,11 +41,11 @@ class AppointmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
-      @appointment = Appointment.find(params[:id])
+      @appointment = Appointment.for_user(current_user).find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def appointment_params
-      params.require(:appointment).permit(:date, :confirm, :assist, :client_id)
+      params.require(:data).permit(attributes:[:date, :confirm, :assist, :time, :note, :address, :client_id])
     end
 end
