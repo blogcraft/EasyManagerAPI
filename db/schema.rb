@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411004042) do
+ActiveRecord::Schema.define(version: 20160420000221) do
 
   create_table "appointments", force: :cascade do |t|
     t.boolean  "confirm"
@@ -71,9 +71,23 @@ ActiveRecord::Schema.define(version: 20160411004042) do
 
   add_index "services", ["user_id"], name: "index_services_on_user_id"
 
+  create_table "settings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "system_logs", force: :cascade do |t|
     t.string   "type"
     t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_settings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "setting_id"
+    t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

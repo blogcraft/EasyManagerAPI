@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 
   # GET /clients
   def index
-    @clients = Client.for_user(current_user)
+    @clients = Client.for_user(User.find(current_user.id))
 
     render json: @clients
   end
