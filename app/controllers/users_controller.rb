@@ -23,6 +23,6 @@ before_action :set_user, only: [:show, :update]
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:data).permit(attributes:[ :name, :last_name, :email, :profession])
+      params.require(:data).permit(attributes:[ :first_name, :last_name, :email, :profession])
     end
 end
