@@ -3,8 +3,7 @@ class InvoicesController < ApplicationController
 
   # GET /invoices
   def index
-    @user = User.find(1);
-    @invoices = Invoice.for_user(@user)
+    @invoices = Invoice.for_user(current_user)
 
     render json: @invoices
   end
