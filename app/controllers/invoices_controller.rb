@@ -3,7 +3,8 @@ class InvoicesController < ApplicationController
 
   # GET /invoices
   def index
-    @invoices = Invoice.all
+    @user = User.find(1);
+    @invoices = Invoice.for_user(@user)
 
     render json: @invoices
   end
@@ -46,6 +47,6 @@ class InvoicesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def invoice_params
-      params.require(:invoice).permit(:date, :subtotal, :taxable, :taxrate, :taxdue, :other, :total, :appointment_id, :service_id)
+      params.require(:data).permit(attributes:[ :date, :subtotal, :taxable, :taxrate, :taxdue, :other, :total, :appointment_id, :service_id, :paid])
     end
 end
