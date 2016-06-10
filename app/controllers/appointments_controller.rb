@@ -3,9 +3,9 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   def index
-    @appointments = current_user.appointments.includes(:client).all.order(:date, :time)
+    @appointments = current_user.appointments.includes(:client).all.order(:datetime)
 
-    render json: @appointments
+    render json: @appointments, include: ['client']
   end
 
   # GET /appointments/1
@@ -46,6 +46,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def appointment_params
-      params.require(:data).permit(attributes:[:date, :confirm, :assist, :time, :note, :address, :client_id])
+      params.require(:data).permit(attributes:[:confirm, :assist, :note, :address, :client_id, :datetime])
     end
 end

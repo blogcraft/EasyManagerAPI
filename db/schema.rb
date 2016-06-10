@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526233356) do
+ActiveRecord::Schema.define(version: 20160605080508) do
 
   create_table "appointments", force: :cascade do |t|
     t.boolean  "confirm"
@@ -19,10 +19,9 @@ ActiveRecord::Schema.define(version: 20160526233356) do
     t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date     "date"
-    t.time     "time"
     t.string   "note"
     t.string   "address"
+    t.datetime "datetime"
   end
 
   add_index "appointments", ["client_id"], name: "index_appointments_on_client_id"

@@ -1,5 +1,6 @@
 class AppointmentSerializer < ActiveModel::Serializer
-  attributes :id, :date, :confirm, :assist, :time, :note, :address
+  attributes :id, :confirm, :assist, :note, :address, :datetime
   attribute :client_id, key: "client_id"
-  attribute :client
+
+  belongs_to :client
 end
